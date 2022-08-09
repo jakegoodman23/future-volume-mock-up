@@ -1,0 +1,25 @@
+.navbar {
+  background-color: #09133d;
+}
+
+.container {
+  width: 100%;
+  float: left;
+  margin-left: 20%;
+}
+#top-title {
+  color: white;
+  font-size: 25px;
+}
+
+#filters {
+  padding-top: 5%;
+}
+
+#graph-info-title {
+  text-decoration: underline;
+}
+#graph-info {
+  color: #09133d;
+  font-style: italic;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Future Volume</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light">
+      <div class="container">
+        <a class="navbar-brand" id="top-title">Dashboard</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+          <canvas id="mixed-chart" width="2000" height="1400"></canvas>
+        </div>
+        <div class="col-sm-3" id="filters">
+          <label id="threshold-label">Prediction/Historical Diff Ind</label>
+          <select id="threshold-filter" class="selectpicker">
+            <option selected value="all">All</option>
+            <option value="high_diff">>=30% diff</option>
+          </select>
+          <br>
+          <br>
+          <label id="day-label">Day of Week</label>
+          <select id="day-filter" class="selectpicker" multiple data-live-search="true" data-actions-box="true">
+            <option value="0">Sunday</option>
+            <option selected value="1">Monday</option>
+            <option selected value="2">Tuesday</option>
+            <option selected value="3">Wednesday</option>
+            <option selected value="4">Thursday</option>
+            <option selected value="5">Friday</option>
+            <option value="6">Saturday</option>
+          </select>
+          <br>
+          <br>
+          <button type="button" class="btn btn-primary" id="apply-filters">Apply Filters</button>
+
+          <br />
+          <br />
+          <div id="graph-info"><span id="graph-info-title">Future Volume Info</span></div>
+          <ul>
+            <li>Prediction Accuracy (probability of being w/in 5 cases)</li>
+            <ul>
+              <li><= 1 week out: 99%</li>
+              <li>1-2 weeks out: 95%</li>
+              <li>2-3 weeks out: 90%</li>
+              <li>3-4 weeks out: 80%</li>
+            </ul>
+            <li>Historical Performance</li>
+            <ul>
+              <li>Calculated by looking at previous case volume and case minutes </li>
+              <li>Calculated using the historical performance of surgeons' case volume in both number of cases and total case minutes, and the day of week, week of month, and nearby holidays.</li>
+            </ul>
+            <li>Scheduled Cases</li>
+            <ul>
+              <li>This represents the cases that are currently scheduled</li>
+            </ul>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+      integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
